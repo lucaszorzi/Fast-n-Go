@@ -1,0 +1,24 @@
+<modification>
+    <name><![CDATA[Remove edit/delete order]]></name>
+  <code><![CDATA[remove-edit-delete-order]]></code>
+  <version><![CDATA[1.0]]></version>
+  <author><![CDATA[mailto: lucas.zorzi@hotmail.com]]></author>
+
+    <file path="admin/view/template/sale/order_list.twig">
+         <operation>
+      <search><![CDATA[
+      		<button type="button" data-toggle="dropdown" class="btn btn-primary dropdown-toggle"><span class="caret"></span></button>
+      	]]></search>
+      <add position="replace"><![CDATA[]]></add>
+    </operation>
+  </file>
+
+  <file path="admin/view/template/sale/order_info.twig">
+         <operation>
+      <search><![CDATA[
+      		<a href="{{ edit }}" data-toggle="tooltip" title="{{ button_edit }}" class="btn btn-primary"><i class="fa fa-pencil"></i></a>
+      	]]></search>
+      <add position="replace"><![CDATA[]]></add>
+    </operation>
+  </file>
+  </modification>

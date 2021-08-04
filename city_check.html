@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <title>Fast 'n' Go!</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+  <style>
+  body {
+    font: 400 15px Montserrat, sans-serif;
+    line-height: 1.8;
+    color: #818181;
+    background: #130800;
+  }
+  h2 {
+    font-size: 24px;
+    text-transform: uppercase;
+    color: white;
+    font-weight: 600;
+    margin-bottom: 30px;
+    padding-top: 50px;
+  }
+
+  .container-fluid {
+    padding: 130px 240px;
+  }
+  
+  .background {
+    background-color: #130800;
+  }
+
+  .thumbnail {
+    padding: 0 0 15px 0;
+    border: none;
+    border-radius: 0;
+    padding-top: 30px;
+  }
+
+  .thumbnail:hover {
+    border: 1px solid #f4511e;
+    background-color: #fff !important;
+    color: #f4511e;
+  }
+
+  .thumbnail img {
+    width: 60%;
+    height: 60%;
+    margin-bottom: 10px;
+  }
+
+  .navbar {
+    margin-bottom: 0;
+    background-color: #130800;
+    z-index: 9999;
+    border: 0;
+    font-size: 12px !important;
+    line-height: 1.42857143 !important;
+    letter-spacing: 4px;
+    border-radius: 0;
+    font-family: Montserrat, sans-serif;
+  }
+  .navbar li a, .navbar .navbar-brand {
+    color: #fff !important;
+  }
+
+  .slideanim {visibility:hidden;}
+  .slide {
+    animation-name: slide;
+    -webkit-animation-name: slide;
+    animation-duration: 1s;
+    -webkit-animation-duration: 1s;
+    visibility: visible;
+  }
+  @keyframes slide {
+    0% {
+      opacity: 0;
+      transform: translateY(70%);
+    } 
+    100% {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+  }
+  @-webkit-keyframes slide {
+    0% {
+      opacity: 0;
+      -webkit-transform: translateY(70%);
+    } 
+    100% {
+      opacity: 1;
+      -webkit-transform: translateY(0%);
+    }
+  }
+
+  </style>
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="../">Fast 'n' Go!</a>
+    </div>
+  </div>
+</nav>
+
+<div id="portfolio" class="container text-center background" style="padding-top: 10%">
+  <h2>Selecione sua cidade</h2><br>
+        <select id="cidade" onchange="check_cidade()">
+        	<option value="empty"></option>
+			<option value="jundiai">Jundiaí</option>
+			<option value="varzea">Várzea Paulista</option>
+			<option value="outra">Outra</option>
+		</select>
+
+		<br>
+		<div id="cidade_erro"><br>Atendemos apenas as cidades listadas.<br>Mas estamos expandindo rapidamente.<br><br>Insira seu contato abaixo para ficar sabendo quando chegaremos à sua cidade!</div>
+
+		<div id="btn_loja">
+			<br>
+			<a href="store/"><input type="button" name="" value="Ir para a loja"></a>
+		</div>
+
+		<script>
+
+			$(document).ready(function(){
+				var cidade = document.getElementById("cidade").value;
+				var div_cidade_erro = document.getElementById("cidade_erro");
+				var div_btn_loja = document.getElementById("btn_loja");
+				div_cidade_erro.style.display = "none";
+			    div_btn_loja.style.display = "none";
+			});
+
+			function check_cidade() {
+				var cidade = document.getElementById("cidade").value;
+				var div_cidade_erro = document.getElementById("cidade_erro");
+				var div_btn_loja = document.getElementById("btn_loja");
+  				if(cidade == "outra"){
+			    	div_cidade_erro.style.display = "block";
+			    	div_btn_loja.style.display = "none";
+			    } else if(cidade == "empty"){
+			    	div_cidade_erro.style.display = "none";
+			    	div_btn_loja.style.display = "none";
+			  	} else {
+			    	div_btn_loja.style.display = "block";
+			    	div_cidade_erro.style.display = "none";
+			  	}
+			}
+			</script>
+
+</div>
+
+<script>
+  $(document).ready(function(){
+    $(".slideanim").each(function(){
+        var pos = $(this).offset().top;
+
+        var winTop = $(window).scrollTop();
+          if (pos < winTop + 600) {
+            $(this).addClass("slide");
+          }
+      });
+  });
+</script>
+
+</body>
+</html>
+
+<script>
+    $(document).ready(function(){ 
+    $('body').find('img[src$="https://cdn.000webhost.com/000webhost/logo/footer-powered-by-000webhost-white2.png"]').remove();
+   }); 
+</script>

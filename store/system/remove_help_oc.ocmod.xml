@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<modification>
+  <name>Remove OC links in perfil 2</name>
+  <code>remove_oclinks_in_perfil_2</code>
+  <version>1.0</version>
+  <author>Lucas Zorzi</author>
+  <link>mailto:lucas.zorzi@hotmail.com</link>
+
+  <file path="admin/view/template/common/header.twig">
+    <operation>
+      <search><![CDATA[<li role="separator" class="divider">]]>
+          </search>
+      <add position="replace"><![CDATA[]]></add>
+    </operation>
+  </file>
+
+  <file path="admin/view/template/common/header.twig">
+    <operation>
+      <search><![CDATA[<li class="dropdown-header">{{ text_help }}</li>]]>
+          </search>
+      <add position="replace"><![CDATA[]]></add>
+    </operation>
+  </file>
+
+  <file path="admin/view/template/common/header.twig">
+    <operation>
+      <search><![CDATA[<li><a href="http://www.opencart.com" target="_blank"><i class="fa fa-opencart fa-fw"></i> {{ text_homepage }}</a></li>]]>
+          </search>
+      <add position="replace"><![CDATA[]]></add>
+    </operation>
+  </file>
+
+  <file path="admin/view/template/common/header.twig">
+    <operation>
+      <search><![CDATA[<li><a href="http://docs.opencart.com" target="_blank"><i class="fa fa-file-text-o fa-fw"></i> {{ text_documentation }}</a></li>]]>
+          </search>
+      <add position="replace"><![CDATA[]]></add>
+    </operation>
+  </file>
+
+  <file path="admin/view/template/common/header.twig">
+    <operation>
+      <search><![CDATA[<li><a href="http://forum.opencart.com" target="_blank"><i class="fa fa-comments-o fa-fw"></i> {{ text_support }}</a></li>]]>
+          </search>
+      <add position="replace"><![CDATA[]]></add>
+    </operation>
+  </file>
+
+</modification>
